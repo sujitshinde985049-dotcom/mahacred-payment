@@ -1,0 +1,11 @@
+import Link from "next/link";
+import { ArrowRight, Check, ChevronRight } from "lucide-react";
+import type { PageData } from "@/lib/content";
+import { CTA, Ecosystem } from "./ui";
+export function ContentPage({data,slug}:{data:PageData;slug:string}){const flow=slug.includes("autopay")?"autopay":slug.includes("virtual")?"virtual":slug.includes("housing")?"society":"bank";return <>
+ <section className="page-hero"><div className="container"><div className="breadcrumbs"><Link href="/">Home</Link><ChevronRight/> <span>{data.eyebrow}</span></div><div className="page-hero-grid"><div><span className="eyebrow">{data.eyebrow}</span><h1>{data.title}</h1><p>{data.intro}</p><Link className="button primary" href="/contact">Talk to our team <ArrowRight size={17}/></Link></div><div className="page-side"><small>WHAT THIS ENABLES</small>{data.highlights.map((h,i)=><div key={h}><span>0{i+1}</span><b>{h}</b></div>)}</div></div></div></section>
+ <section className="page-intro"><div className="container"><span>THE OPPORTUNITY</span><p>{data.description}</p></div></section>
+ <section className="section"><div className="container content-sections">{data.sections.map((s,i)=><article key={s.title}><div className="section-number">0{i+1}</div><div><h2>{s.title}</h2><p>{s.body}</p>{s.items&&<ul>{s.items.map(x=><li key={x}><Check size={16}/>{x}</li>)}</ul>}</div></article>)}</div></section>
+ {(["autopay","virtual","society"].includes(flow))&&<section className="section ink"><div className="container"><div className="section-title light"><span>CONNECTED FLOW</span><h2>Designed as one operational journey</h2></div><Ecosystem type={flow as "autopay"|"virtual"|"society"}/></div></section>}
+ {data.faqs&&<section className="section soft"><div className="container faq-layout"><div className="section-title"><span>COMMON QUESTIONS</span><h2>What decision-makers ask</h2></div><div>{data.faqs.map(x=><details key={x.q}><summary>{x.q}<span>+</span></summary><p>{x.a}</p></details>)}</div></div></section>}<CTA title={data.cta||"Build the right solution with us"}/>
+ </>}

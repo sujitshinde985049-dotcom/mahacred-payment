@@ -1,0 +1,2 @@
+import type { MetadataRoute } from "next";import { pages } from "@/lib/content";
+export default function sitemap():MetadataRoute.Sitemap{const base=process.env.NEXT_PUBLIC_SITE_URL||"https://mahacred-firstpaytech.vercel.app";return ["",...Object.keys(pages),"contact","legal/privacy","legal/terms","legal/disclaimer"].map((p,i)=>({url:`${base}/${p}`,lastModified:new Date(),changeFrequency:i===0?"weekly":"monthly",priority:i===0?1:0.7}))}
