@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 import { Logo } from "./header";
 const columns = [
-  {title:"Banking", links:[["Co-operative Banks","/banking/co-operative-banks"],["Urban Co-operative Banks","/banking/urban-co-operative-banks"],["Digital Banking","/banking/digital-banking"],["Collection Infrastructure","/banking/collection-infrastructure"]]},
+  {title:"Banking", links:[["Co-operative Banks","/banking/co-operative-banks"],["Urban Co-operative Banks","/banking/urban-co-operative-banks"],["Credit Co-operative Societies","/banking/credit-co-operative-societies"],["Digital Banking","/banking/digital-banking"],["Collection Infrastructure","/banking/collection-infrastructure"]]},
   {title:"Solutions", links:[["UPI AutoPay","/solutions/upi-autopay"],["Virtual Accounts","/solutions/virtual-accounts"],["UPI QR","/solutions/upi-qr"],["POS Machines","/solutions/pos"],["Micro ATM","/solutions/micro-atm"]]},
   {title:"Industries & Company", links:[["Housing Societies","/industries/housing-societies"],["Education","/industries/education"],["Healthcare","/industries/healthcare"],["About us","/about"],["Why Mahacred","/why-mahacred"]]},
   {title:"Resources & Legal", links:[["Technology & Security","/technology-security"],["FAQs","/faqs"],["Grievance / Support","/support"],["Privacy Policy","/legal/privacy"],["Terms & Conditions","/legal/terms"]]},
